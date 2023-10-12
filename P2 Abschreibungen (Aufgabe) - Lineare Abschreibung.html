@@ -19,36 +19,7 @@
             <th>Restwert</th>
         </tr>
     </table>
-    
-<div id="php-comments">
-        <?php
-        $anschaffungskosten = 15000; // Setze die Anschaffungskosten in €
-        $nutzungsdauer = 9; // Setze die Nutzungsdauer in Jahren
-
-        $afa_satz = $anschaffungskosten / $nutzungsdauer;
-
-        echo "<p>Anschaffungskosten: $anschaffungskosten € </p>";
-        echo "<br/> <p>Nutzungsdauer: $nutzungsdauer Jahre </p>";
-        echo "<br/> <p>AfA-Satz pro Jahr: " . number_format($afa_satz, 2) . "€ </p>";
-
-        echo "<br/> <table border='15'>";
-        echo "<br/> <tr><th>Jahr</th><th>AfA-Betrag</th><th>Restwert</th></tr>";
-
-        for ($jahr = 1; $jahr <= $nutzungsdauer; $jahr++) {
-            $afa_betrag = $afa_satz * $jahr;
-            $restwert = $anschaffungskosten - $afa_betrag;
-
-            echo "<tr align=center>";
-            echo "<td> $jahr </td>";
-            echo "<td>" . number_format($afa_betrag, 2) . "€ </td>";
-            echo "<td>" . number_format($restwert, 2) . "€ </td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
-        ?>
-    </div>
-    
+      
     <script>
         var anschaffungskosten = 15000; // Setze die Anschaffungskosten in €
         var nutzungsdauer = 9; // Setze die Nutzungsdauer in Jahren
