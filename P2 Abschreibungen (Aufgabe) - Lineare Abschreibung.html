@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lineare Abschreibungstabelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lineare Abschreibungstabelle für die Klimaanlage</h1>
+    <button onclick="anzeigenCodeInNeuemTab()">Zeige HTML-Code</button>
+    <button onclick="zurueckZurHauptseite()">Zurück zur Hauptseite</button>
+
+    <?php
+    $anschaffungskosten = 15000; // Setze die Anschaffungskosten in €
+    $nutzungsdauer = 9; // Setze die Nutzungsdauer in Jahren
+
+    $afa_satz = $anschaffungskosten / $nutzungsdauer;
+
+    echo "<p>Anschaffungskosten: $anschaffungskosten € </p>";
+    echo "<br/> <p>Nutzungsdauer: $nutzungsdauer Jahre </p>";
+    echo "<br/> <p>AfA-Satz pro Jahr: " . number_format($afa_satz, 2) . "€ </p>";
+
+    echo "<br/> <table border='15'>";
+    echo "<br/> <tr><th>Jahr</th><th>AfA-Betrag</th><th>Restwert</th></tr>";
+
+    for ($jahr = 1; $jahr <= $nutzungsdauer; $jahr++) {
+        $afa_betrag = $afa_satz * $jahr;
+        $restwert = $anschaffungskosten - $afa_betrag;
+
+        echo "<tr align=center>";
+        echo "<td> $jahr </td>";
+        echo "<td>" . number_format($afa_betrag, 2) . "€ </td>";
+        echo "<td>" . number_format($restwert, 2) . "€ </td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+    ?>
+  <script>
+    function anzeigenCodeInNeuemTab() {
+            var newWindow = window.open();
+            newWindow.document.write('<pre>' + escapeHtml(document.documentElement.outerHTML) + '</pre>');
+        }
+     function zurueckZurHauptseite() {
+            window.location.href = 'index.html'; // Ändere 'index.html' auf den tatsächlichen Dateinamen deiner Hauptseite.
+        }
+
+        function escapeHtml(unsafe) {
+            return unsafe.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }</script>
+
+</body>
+</html>
