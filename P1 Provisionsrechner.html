@@ -5,10 +5,12 @@
 </head>
 <body>
     <h1>P1 Provisionsrechner (Aufgabe)</h1>
-    <label for="umsatzInput">Gieb deinen monatlichen Umsatz ein (in €): </label>
+    <label for="umsatzInput">Gib deinen monatlichen Umsatz ein (in €): </label>
     <input type="number" id="umsatzInput">
     <button onclick="berechneProvision()">Start</button>
     <p id="ergebnis"></p>
+    <button onclick="anzeigenCodeInNeuemTab()">Zeige HTML-Code</button>
+    <button onclick="zurueckZurHauptseite()">Zurück zur Hauptseite</button>
 
     <script>
         function berechneProvision() {
@@ -28,6 +30,18 @@
             }
 
             document.getElementById("ergebnis").innerHTML = "Deine Provision beträgt: " + provision.toFixed(2) + " €";
+        }
+
+        function anzeigenCodeInNeuemTab() {
+            var newWindow = window.open();
+            newWindow.document.write('<pre>' + escapeHtml(document.documentElement.outerHTML) + '</pre>');
+        }
+     function zurueckZurHauptseite() {
+            window.location.href = 'index.html'; // Ändere 'index.html' auf den tatsächlichen Dateinamen deiner Hauptseite.
+        }
+
+        function escapeHtml(unsafe) {
+            return unsafe.replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
     </script>
 </body>
