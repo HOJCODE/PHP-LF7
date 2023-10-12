@@ -2,14 +2,13 @@
 <html>
 <head>
     <title>Lineare Abschreibungstabelle</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Lineare Abschreibungstabelle für die Klimaanlage</h1>
     <button onclick="anzeigenCodeInNeuemTab()">Zeige HTML-Code</button>
     <button onclick="zurueckZurHauptseite()">Zurück zur Hauptseite</button>
 
-    <?php
+    <script>
     $anschaffungskosten = 15000; // Setze die Anschaffungskosten in €
     $nutzungsdauer = 9; // Setze die Nutzungsdauer in Jahren
 
@@ -34,8 +33,8 @@
     }
 
     echo "</table>";
-    ?>
-  <script>
+   
+  
     function anzeigenCodeInNeuemTab() {
             var newWindow = window.open();
             newWindow.document.write('<pre>' + escapeHtml(document.documentElement.outerHTML) + '</pre>');
@@ -46,7 +45,8 @@
 
         function escapeHtml(unsafe) {
             return unsafe.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }</script>
+        }
+    </script>
 
 </body>
 </html>
