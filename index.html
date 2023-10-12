@@ -8,28 +8,59 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: #007bff;
+            margin-top: 40px;
         }
         .container {
             margin: 20px;
         }
         .link {
             display: block;
-            margin: 10px;
-            font-size: 18px;
+            margin: 15px 0;
+            font-size: 20px;
             color: #007bff;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+        .link:hover {
+            color: #0056b3;
+        }
+        .card {
+            display: inline-block;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <h1>Willkommen zur PHP-Skriptauswahl</h1>
     <div class="container">
-        <a class="link" href="skript1.php">Skript 1 - Lineare Abschreibung</a>
-        <a class="link" href="skript2.php">Skript 2 - Degressive Abschreibung</a>
-        <a class="link" href="skript3.php">Skript 3 - Beispiel-Skript</a>
+        <div class="card">
+            <div class="card-title">Skript 1 - Lineare Abschreibung</div>
+            <a class="link" href="skript1.php">Skript öffnen</a>
+        </div>
+        <div class="card">
+            <div class="card-title">Skript 2 - Degressive Abschreibung</div>
+            <a class="link" href="skript2.php">Skript öffnen</a>
+        </div>
+        <div class="card">
+            <div class="card-title">Skript 3 - Beispiel-Skript</div>
+            <a class="link" href="skript3.php">Skript öffnen</a>
+        </div>
     </div>
 </body>
 </html>
